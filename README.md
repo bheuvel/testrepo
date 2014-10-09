@@ -1,4 +1,4 @@
-dsc_script code (attribute usage) does not support (e.g.) Resource Kit DSC resources
+dsc_script `code` (code-attribute usage) does not support (e.g.) Resource Kit DSC resources
 
 When using DSC resources which are not present by default, such as the DSC Resource Kit Waves, within the code attribute, LCM gives back errors. E.g. when using xADDomain:
 ```
