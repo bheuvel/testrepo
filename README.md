@@ -42,4 +42,4 @@ Alternative solution might be to use a separate attribute which needs to list th
 
 In the end, dsc_script CAN off course be used with (e.g.) DSC Resource Kit Waves provided resources, but requires usage of (creation of) an external file. This could be a cookbook file, but would rather see this "enabled" for the (inline) code attribute.
 
-Or perhaps I grossly overlooked something...
+Or perhaps I overlooked something?
