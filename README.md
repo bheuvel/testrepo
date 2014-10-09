@@ -28,7 +28,7 @@ Without this functionality, the code attribute is basically only usable for the 
 Leaving out the `localhost` definition will also make the `code` and `command` attribute behave more similar; providing, or complete control, DSC script code.
 
 
-Alternative solution might be to use a separate attribute which needs to list the required/used DSC modules, which would then be inserted before the `localhost` block. This would be somewhat similar to what dsc_rource does ([dsc_provider.rb#L106](https://github.com/opscode-cookbooks/dsc/blob/master/libraries/dsc_provider.rb#L106)), but as dsc_resource takes a specific named (`resource_name`) DSC resource, the required import-code is automatically generated ([dsc_provider.rb#L119](https://github.com/opscode-cookbooks/dsc/blob/master/libraries/dsc_provider.rb#L119))
+Alternative solution might be to use a separate attribute which needs to list the required/used DSC modules, which would then be inserted before the `localhost` block. This would be somewhat similar to what dsc_rource does ([dsc_provider.rb#L106](https://github.com/opscode-cookbooks/dsc/blob/master/libraries/dsc_provider.rb#L106)), but as dsc_resource takes a specific named (`resource_name`) DSC resource, the required import-code is relatively easily and automatically generated ([dsc_provider.rb#L119](https://github.com/opscode-cookbooks/dsc/blob/master/libraries/dsc_provider.rb#L119)). In this case the entire could would need to be parsed and analyzed for DSC resources.
 
 
 In the end, dsc_script CAN off course be used with (e.g.) DSC Resource Kit Waves provided resources, but requires usage of (creation of) an external file. This could be a cookbook file, but would rather see this "enabled" for the (inline) code attribute.
