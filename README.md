@@ -12,3 +12,10 @@ Reason for this is that the respective module needs to be imported into the resp
 
 * This keyword is only allowed at a specific scope within the DSC Configuration, namely outside/before the `node` definition.
 * Unfortunately dsc_script places the code contained in the `code` attribute, WITHIN a `node` definition
+
+The ConfigurationGenerator ([configuration_generator.rb Chef 11.16.0] (https://github.com/opscode/chef/blob/11.16.0/lib/chef/util/dsc/configuration_generator.rb)) uses the following code:
+```
+def configuration_code(code, configuration_name)
+    "$ProgressPreference = 'SilentlyContinue';Configuration '#{configuration_name}'\n{\n\tnode 'localhost'\n{\n\t#{code}\n}}\n"
+end
+```
