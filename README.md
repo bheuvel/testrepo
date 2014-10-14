@@ -20,7 +20,7 @@ This exception is evaluated using:
 ```
 if what_if_exception_output.gsub(/\s+/, ' ') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i
 ```
-([local_configuration_manager.rb](https://github.com/opscode/chef/blob/master/lib/chef/util/dsc/local_configuration_manager.rb#L82)
+([local_configuration_manager.rb](https://github.com/opscode/chef/blob/master/lib/chef/util/dsc/local_configuration_manager.rb#L82))
 
 Unfortunately, the regex `/\s+/,' '` converts the linebreak into a space, (debug output) results in:
 ```
@@ -49,7 +49,7 @@ So either of the following will solve this specific scenario:
 * `if what_if_exception_output.gsub(/[\r\n]+/, '') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 * `if what_if_exception_output.gsub(/[\r\n]+/, '').gsub(/\s+/, ' ') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 
-I would propose the last ([Created a pull request](https://github.com/opscode/chef/pull/2225).
+I would propose the last ([Created a pull request](https://github.com/opscode/chef/pull/2225)).
 
 After that line of code, some `Chef::Log::warn` are executed using the `/\s+/` regex. For improved readability I would propose to NOT change those.
 
