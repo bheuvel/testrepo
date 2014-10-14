@@ -40,12 +40,11 @@ In general it makes sense to convert all tabs and potential doublespaces to sing
 Converting linebreaks to a single space does provide better human readable text, but that is assuming a linebreak is not down in the middle of a word.
 
 So either of the following will solve this specific scenario:
-* `if what_if_exception_output.gsub(/\s+/    , '')                  =~ /Aparametercannotbefoundthatmatchesparametername'Whatif'/i`
-* `if what_if_exception_output.gsub(/[\r\n]+/, '')                  =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
+* `if what_if_exception_output.gsub(/\s+/    , '') =~ /Aparametercannotbefoundthatmatchesparametername'Whatif'/i`
+* `if what_if_exception_output.gsub(/[\r\n]+/, '') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 * `if what_if_exception_output.gsub(/[\r\n]+/, '').gsub(/\s+/, ' ') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 
+I would propose the last ([Created a pull request](https://github.com/opscode/chef/pull/2225).
 
+After that line of code, some `Chef::Log::warn` are executed using the `/\s+/` regex. For improved readability I would propose to NOT change those.
 
-Either linebreks need to be (just) removed, or '\s' 
-
-Not sure 
