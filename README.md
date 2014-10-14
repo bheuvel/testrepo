@@ -40,8 +40,8 @@ In general it makes sense to convert all tabs and potential doublespaces to sing
 Converting linebreaks to a single space does provide better human readable text, but that is assuming a linebreak is not down in the middle of a word.
 
 So either of the following will solve this specific scenario:
-* `if what_if_exception_output.gsub(/\s+/, '') =~ /Aparametercannotbefoundthatmatchesparametername'Whatif'/i`
-* `if what_if_exception_output.gsub(/[\r\n]+/, '') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
+* `if what_if_exception_output.gsub(/\s+/    , '')                  =~ /Aparametercannotbefoundthatmatchesparametername'Whatif'/i`
+* `if what_if_exception_output.gsub(/[\r\n]+/, '')                  =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 * `if what_if_exception_output.gsub(/[\r\n]+/, '').gsub(/\s+/, ' ') =~ /A parameter cannot be found that matches parameter name 'Whatif'/i`
 
 
