@@ -3,7 +3,7 @@
 We like to encourage you to contribute to the repository.
 This should be as easy as possible for you but there are a few things to consider when contributing.
 The following guidelines for contribution should be followed if you want to submit a pull request.
-If you lack knowledge or experience to complete some of these steps, but you are willing to learn and invest time, please submit your contribution anyway so we can still benefit both from the experience and code.
+If you lack knowledge or experience to complete some of these steps, but you are willing to learn and invest time, please submit your contribution anyway so we can possibly help you and still benefit both from the experience and code.
 
 ## How to prepare
 
