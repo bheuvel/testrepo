@@ -21,12 +21,13 @@ If you lack knowledge or experience to complete some of these steps, but you are
 * In your forked repository, create a topic branch for your upcoming patch.
 	* Usually this is based on the master branch.
 	* Create a branch based on master; `git branch
-	fix/master/my_contribution master` then checkout the new branch with `git
+	fix/my_contribution master` then checkout the new branch with `git
 	checkout fix/master/my_contribution`.  Please avoid working directly on the `master` branch.
-* Make commits of logical units and describe them properly.
+* Adhere to [defined code conventions](https://github.com/MissionCriticalCloud/checkstyle)
+* Make commits of logical self-contained units and describe them properly.
 
 * Submit tests to your patch / new feature so it can be tested easily.
-* Assure nothing is broken by running all the tests.
+* Assure nothing is broken by running all the tests (Unit, System, Integration).
 
 ## Submit Changes
 
@@ -37,5 +38,6 @@ If you lack knowledge or experience to complete some of these steps, but you are
 
 # Additional Resources
 
+* [MissionCriticalCloud code conventions](https://github.com/MissionCriticalCloud/checkstyle)
 * [General GitHub documentation](http://help.github.com/)
 * [GitHub pull request documentation](http://help.github.com/send-pull-requests/)
