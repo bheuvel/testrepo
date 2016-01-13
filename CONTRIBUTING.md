@@ -19,7 +19,6 @@ If you lack knowledge or experience to complete some of these steps, but you are
 
 * Fork the repository on GitHub to your account
 * In your forked repository, create a topic branch for your upcoming patch. Do not work directly on the master branch.
-	* Usually this is based on the master branch.
 	* Create a branch based on master; `git branch fix/my_contribution master`
 	* Checkout the new branch with `git checkout fix/my_contribution`.
 * Adhere to [defined code conventions](https://github.com/MissionCriticalCloud/checkstyle)
