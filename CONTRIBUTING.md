@@ -14,10 +14,10 @@ If you lack knowledge or experience to complete some of these steps, but you are
   * If you plan on submitting a bug report, please submit debug-level logs along
     with the report using [gist](https://gist.github.com/) or some other paste
     service.
-* Fork the repository on GitHub
 
 ## Make Changes
 
+* Fork the repository on GitHub to your account
 * In your forked repository, create a topic branch for your upcoming patch.
 	* Usually this is based on the master branch.
 	* Create a branch based on master; `git branch
@@ -25,8 +25,13 @@ If you lack knowledge or experience to complete some of these steps, but you are
 	checkout fix/my_contribution`.  Please avoid working directly on the `master` branch.
 * Adhere to [defined code conventions](https://github.com/MissionCriticalCloud/checkstyle)
 * Make commits of logical self-contained units and describe them properly.
-
 * Submit tests to your patch / new feature so it can be tested easily.
+* Rebase `fix/my_contribution` to include latest updates from `upstream/master`:
+```
+$ git remote add upstream https://github.com/MissionCriticalCloud/cosmic.git
+$ git fetch upstream
+$ git rebase upstream/master
+```
 * Assure nothing is broken by running all the tests (Unit, System, Integration).
 
 ## Submit Changes
@@ -35,6 +40,7 @@ If you lack knowledge or experience to complete some of these steps, but you are
 * Open a pull request to the original repository and choose the right original branch you want to patch.
 * If not done in commit messages (which you really should do) please reference and update your issue with the code changes.
 * Even if you have write access to the repository, do not directly push or merge pull-requests. Let another team member review your pull request and approve.
+
 
 # Additional Resources
 
