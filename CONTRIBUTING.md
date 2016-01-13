@@ -22,7 +22,7 @@ If you lack knowledge or experience to complete some of these steps, but you are
 	* Usually this is based on the master branch.
 	* Create a branch based on master; `git branch
 	fix/my_contribution master` then checkout the new branch with `git
-	checkout fix/master/my_contribution`.  Please avoid working directly on the `master` branch.
+	checkout fix/my_contribution`.  Please avoid working directly on the `master` branch.
 * Adhere to [defined code conventions](https://github.com/MissionCriticalCloud/checkstyle)
 * Make commits of logical self-contained units and describe them properly.
 
