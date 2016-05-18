@@ -22,15 +22,17 @@ plug_nic() {
   sudo ip route flush table $tableName
   sudo ip route flush cache
 
-  sudo -E sed -i "s/.*$dev.*//" /etc/udev/rules.d/70-persistent-net.rules
-  export INTERFACE=$dev
-  export MATCHADDR=`ip addr show $INTERFACE | grep ether | awk '{print $2}'`
-  sudo -E /lib/udev/write_net_rules
+#  sudo -E sed -i "s/^.*$dev.*$//" /etc/udev/rules.d/70-persistent-net.rules
+#  export INTERFACE=$dev
+#  export MATCHADDR=`ip addr show $INTERFACE | grep ether | awk '{print $2}'`
+#  sudo -E /lib/udev/write_net_rules  >> /tmp/cloud-nic.log
 }
 
 
 unplug_nic() {
-  echo "unplugging $dev"  >> /tmp/cloud-nic.log
+#  date >> /temp/cloud-nic.log
+#  uptime >> /temp/cloud-nic.log
+#  echo "unplugging $dev"  >> /temp/cloud-nic.log
 
   sudo iptables -t mangle -D PREROUTING -i $dev -m state --state NEW -j CONNMARK --set-mark $tableNo 2>/dev/null
 
@@ -73,7 +75,7 @@ unplug_nic() {
   # remove apache config for this eth
   rm -f /etc/apache2/conf.d/vhost$dev.conf
 
-  sudo -E sed -i "s/.*$dev.*//" /etc/udev/rules.d/70-persistent-net.rules
+  sudo -E sed -i "s/^.*$dev.*$//" /etc/udev/rules.d/70-persistent-net.rules
 }
 
 action=$1
@@ -87,3 +89,4 @@ then
 else
   unplug_nic
 fi
+
