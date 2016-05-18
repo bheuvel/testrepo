@@ -25,8 +25,7 @@ plug_nic() {
   sudo -E sed -i "s/.*$dev.*//" /etc/udev/rules.d/70-persistent-net.rules
   export INTERFACE=$dev
   export MATCHADDR=`ip addr show $INTERFACE | grep ether | awk '{print $2}'`
-  sudo -E /lib/udev/write_net_rules  >> /tmp/cloud-nic.log
-  echo "plugging $dev"  >> /tmp/cloud-nic.log
+  sudo -E /lib/udev/write_net_rules
 }
 
 
@@ -81,8 +80,6 @@ action=$1
 dev=$2
 tableNo=${dev:3}
 tableName="Table_$dev"
-
-date >> /tmp/cloud-nic.log
 
 if [ $action == 'add' ]
 then
